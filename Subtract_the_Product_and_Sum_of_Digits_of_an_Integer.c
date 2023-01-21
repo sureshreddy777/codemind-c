@@ -10,5 +10,5 @@ int main()
         pro=pro*l;
         n=n/10;
     }
-    printf("%d",pro-sum);
+    printf("%u",pro-sum);
 }
