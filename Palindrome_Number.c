@@ -1,33 +1,26 @@
 #include<stdio.h>
 int main()
 {
-    int n;
+    int n,q,i;
     scanf("%d",&n);
-    int a[n],i,r,rev,m;
-    for(i=0;i<n;i++)
+    for(i=1;i<=n;i++)
     {
-        scanf("%d",&a[i]);
-    }
-    for(i=0;i<n;i++)
-    { 
-        rev=0;
-        m=a[i];
-        while(m>0)
+        int m,t,r,s=0;
+        scanf("%d",&m);
+        t=m;
+        while(t!=0)
         {
-            r=m%10;
-            rev=rev*10+r;
-            m=m/10;
+            r=t%10;
+            s=s*10+r;
+            t=t/10;
         }
-        if(rev==a[i])
+        if(s==m)
         {
             printf("True
 ");
         }
         else
-        {
-            printf("False
+        printf("False
 ");
-        }
     }
-    
 }
