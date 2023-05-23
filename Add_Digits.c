@@ -1,23 +1,13 @@
 #include<stdio.h>
 int main()
-{    
-    long int num;
-    int sum = 0, rem;
-    scanf("%ld", &num);   
-
-    while(num / 10 != 0)
+{
+    int n,s=0,r;
+    scanf("%d",&n);
+    while(n>9)
     {
-        sum = 0;
-        while(num != 0) 
-        {
-            rem = num % 10;  
-            sum += rem;      
-            num = num / 10;  
-        }
-
-        num = sum;
+        r=n%10;
+        n=n/10;
+        n=n+r;
     }
-
-    printf("%d", sum);
-
+    printf("%d",n);
 }
