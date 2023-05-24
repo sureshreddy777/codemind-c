@@ -1,48 +1,55 @@
 #include<stdio.h>
+int prime(int a)
+{
+    int c=0;
+    for(int i=1;i<=a;i++)
+    {
+        if(a%i==0)
+        {
+            c++;
+        }
+    }
+    if(c==2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 int main()
 {
-    int n,pre,post,i;
-    scanf("%d",&n);
-    int m=n;
-    while(m>0)
-    {
-        for(i=2;i<=m;i++)
+    
+        int a,f,b;
+        scanf("%d",&a);
+        for(int i=a;;i++)
         {
-            if(m%i==0)
+            if(prime(i))
             {
+                f=i;
                 break;
             }
         }
-        if(m==i)
+        for(int i=a;;i--)
         {
-            pre=m;
-            break;
-        }
-        else
-        m--;
-    }
-    int s=n;
-    while(s>0)
-    {
-        for(i=2;i<=s;i++)
-        {
-            if(s%i==0)
+            if(prime(i))
             {
-                post=s;
+                b=i;
                 break;
             }
         }
-        if(s==i)
+        int d1=f-a;
+        int d2=a-b;
+        if(d1>=d2)
         {
-            break;
+            printf("%d
+",d2);
         }
         else
         {
-            s++;
+            printf("%d
+",d1);
         }
-    }
-    if(n-pre<post-n)
-    printf("%d",n-pre);
-    else
-    printf("%d",post-n);
+    
 }
