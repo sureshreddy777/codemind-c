@@ -1,28 +1,29 @@
+
 #include<stdio.h>
-#include<string.h>
 int main()
 {
-    char a[100];
-    scanf("%[^
-]s",a);
-    int i,j,l=strlen(a),c,z;
-    for(i=0;i<l;i++)
+    int n,c=0,r;
+    scanf("%d",&n);
+    int i=0;
+    int a[100];
+    while(n!=0)
     {
-        c=0;
-        for(j=0;j<l;j++)
+        r=n%10;
+        a[i]=r;
+        c++;
+        i++;
+        n=n/10;
+    }
+    for(int i=0;i<c;i++)
+    {
+        for(int j=0;j<c;j++)
         {
-            if(i!=j && a[i]==a[j])
+            if(a[i]==a[j]&& i!=j)
             {
-                c++;
+                printf("Not Unique Number");
+                return 0;
             }
         }
-        if(c==0)
-        {
-            z++;
-        }
     }
-    if(z==l)
     printf("Unique Number");
-    else
-    printf("Not Unique Number");
 }
